@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>sentuhangift.id | Jastip & Parcel Terpercaya</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet"/>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand:#0d6efd;
+      --dark:#0b1220;
+      --muted:#6b7280;
+      --soft:#f6f7fb;
+      --card:#ffffff;
+      --radius:18px;
+    }
+    .stars{
+      color: #f5c518; /* emas elegan */
+      font-size: 1.05rem;
+      letter-spacing: 2px;
+    }
+    body{
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--soft);
+      color: #111827;
+    }
+.btn-order{
+  background-color: #0d6efd;   /* biru Bootstrap / profesional */
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 22px;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.btn-order:hover{
+  background-color: #0b5ed7;   /* biru lebih gelap saat hover */
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(13,110,253,0.35);
+}
+    /* NAVBAR */
+    .navbar{
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background: rgba(11, 18, 32, 0.75) !important;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .navbar-brand{
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+    .nav-link{ opacity: .9; }
+    .nav-link:hover{ opacity: 1; }
+
+    /* HERO */
+    .hero{
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      background: #000;
+    }
+    .hero .slider{
+      position:absolute;
+      inset:0;
+    }
+    .hero .slider img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      opacity:0;
+      transform: scale(1.04);
+      transition: opacity .8s ease, transform 6s ease;
+    }
+    .hero .slider img.active{
+      opacity:1;
+      transform: scale(1.0);
+    }
+    .hero .overlay{
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(1200px 600px at 20% 30%, rgba(13,110,253,.35), transparent 55%),
+        linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.75));
+      display:flex;
+      align-items:center;
+      padding-top: 72px;
+    }
+
+    .hero-card{
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: var(--radius);
+      padding: 28px;
+      color: #f8f5f5;
+      box-shadow: 0 20px 50px rgba(0,0,0,.35);
+    }
+    .hero-badge{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(255,225,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      font-weight:600;
+      font-size: .9rem;
+    }
+    .hero h1{
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.05;
+      margin: 14px 0 10px;
+    }
+    .hero p{
+      color: rgba(255,255,255,.86);
+      font-size: 1.05rem;
+      max-width: 54ch;
+    }
+
+    .hero .hero-actions{
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .btn-ghost{
+      border: 1px solid rgba(255,255,255,0.28);
+      color:#fff;
+      background: rgba(255,255,255,0.06);
+    }
+    .btn-ghost:hover{ background: rgba(160, 20, 20, 0.12); color:#fff; }
+
+    .slider-controls button{
+      position:absolute;
+      top:50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.16);
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      cursor: pointer;
+      display:grid;
+      place-items:center;
+      font-size: 22px;
+      z-index: 5;
+    }
+    .slider-controls .prev{ left: 18px; }
+    .slider-controls .next{ right: 18px; }
+    .slider-controls button:hover{ background: rgba(0,0,0,0.55); }
+
+    /* SECTIONS */
+    .section{ padding: 80px 0; }
+    .section-title{
+      font-weight: 800;
+      letter-spacing: .2px;
+      margin-bottom: 8px;
+    }
+    .section-subtitle{
+      color: var(--muted);
+      margin-bottom: 34px;
+    }
+
+    /* CARDS */
+    .pro-card{
+      border: 1px solid rgba(17,24,39,0.08);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+      overflow:hidden;
+      transition: transform .18s ease, box-shadow .18s ease;
+      height: 100%;
+    }
+    .pro-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(17,24,39,0.10);
+    }
+    .pro-card img{
+      width:100%;
+      height: 190px;
+      object-fit: cover;
+    }
+    .pro-card .card-body{
+      padding: 18px 18px 20px;
+    }
+    .pro-chip{
+      display:inline-block;
+      font-size: .8rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(13,110,253,.10);
+      color: var(--brand);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    /* ORDER STEPS */
+    .step-icon{
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      background: rgba(13,110,253,.12);
+      display:grid;
+      place-items:center;
+      font-weight: 900;
+      color: var(--brand);
+    }
+    .step-title{ font-weight: 800; margin-bottom: 4px; }
+
+    /* TESTI */
+    .quote{
+      color:#111827;
+      font-size: .98rem;
+      line-height: 1.55;
+    }
+    .stars{ letter-spacing: 1px; }
+
+    /* GALERI */
+    .gallery-square{
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(17,24,39,0.08);
+      box-shadow: 0 10px 24px rgba(17,24,39,0.06);
+      transition: transform .18s ease;
+    }
+    .gallery-square:hover{ transform: translateY(-3px); }
+    
+
+    /* CONTACT */
+    .contact-box{
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid rgba(17,24,39,0.08);
+      box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+      padding: 18px;
+    }
+    .icon-dot{
+      width: 10px; height: 10px; border-radius: 999px; background: var(--brand);
+      display:inline-block; margin-right: 8px;
+    }
+
+    /* FOOTER */
+    footer{
+      background: var(--dark);
+      color: rgba(255,255,255,.9);
+      padding: 34px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    footer small{ color: rgba(255,255,255,.75); }
+
+    /* Smooth scroll */
+    html{ scroll-behavior:smooth; }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">sentuhangift.id</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navMenu" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a href="#home" class="nav-link">Beranda</a></li>
+        <li class="nav-item"><a href="#profil" class="nav-link">Profil</a></li>
+        <li class="nav-item"><a href="#katalog" class="nav-link">Katalog</a></li>
+        <li class="nav-item"><a href="#caraorder" class="nav-link">Cara Order</a></li>
+        <li class="nav-item"><a href="#testimoni" class="nav-link">Testimoni</a></li>
+        <li class="nav-item"><a href="#galeri" class="nav-link">Galeri</a></li>
+        <li class="nav-item"><a href="#kontak" class="nav-link">Kontak</a></li>
+        <li class="nav-item ms-lg-2">
+          <a class="btn btn-primary btn-sm px-3" href="https://wa.me/6289516928617?text=Halo,%20saya%20ingin%20order%20bakpia%20atau%20parcel." target="_blank" rel="noopener">
+            Pesan via WhatsApp
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="slider" aria-label="Hero Slider">
+    <img src="https://www.gotravelly.com/blog/wp-content/uploads/2020/10/bakpia.jpg" class="active" alt="Bakpia Jogja">
+    <img src="https://www.prestisa.com/wp-content/uploads/2016/06/7.950K.jpg" alt="Parcel Premium">
+    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rash-m61xslz4ys5y8d" alt="Parcel & Hampers">
+  </div>
+
+  <div class="slider-controls">
+    <button class="prev" type="button" onclick="changeSlide(-1)" aria-label="Sebelumnya">‹</button>
+    <button class="next" type="button" onclick="changeSlide(1)" aria-label="Berikutnya">›</button>
+  </div>
+
+  <div class="overlay">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <div class="hero-card">
+            <span class="hero-badge"> Aman • Rapi • Terpercaya</span>
+            <h1>Jastip Bakpia Jogja & Parcel  untuk Momen Spesial</h1>
+            <p>
+              Titip bakpia dari toko favorit di Yogyakarta, dan pesam parcel Lebaran/Natal yang bisa custom.
+              Dikemas rapi, proses jelas, dan siap dikirim ke alamat Anda.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#katalog" class="btn btn-primary btn-lg">Lihat Katalog</a>
+              <a href="#caraorder" class="btn btn-ghost btn-lg">Cara Order</a>
+              <a href="#kontak" class="btn btn-light btn-lg">Kontak & Lokasi</a>
+            </div>
+
+            <div class="mt-3 small" style="color:rgba(255,255,255,.78);">
+              <span class="icon-dot"></span>Fast response via WhatsApp • Pengemasan aman & rapi
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="contact-box" style="background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.16); color:#fff;">
+            <div class="fw-bold mb-1">Butuh rekomendasi parcel / bakpia?</div>
+            <div class="small mb-3" style="color:rgba(255,255,255,.82);">
+              Tinggal chat, kami bantu pilihkan sesuai budget & tujuan.
+            </div>
+            <a class="btn btn-light w-100" href="https://wa.me/6289516928617?text=Halo,%20saya%20ingin%20order%20bakpia%20atau%20parcel." target="_blank" rel="noopener">
+              Chat via WhatsApp
+            </a>
+            <div class="mt-3 small" style="color:rgba(255,255,255,.78);">
+              Jam operasional: fleksibel • Respon cepat
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFIL -->
+<section id="profil" class="section bg-white">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-title">Tentang Kami</h2>
+      <p class="section-subtitle">Layanan personal dengan standar profesional untuk kirim hadiah dan oleh-oleh.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="pro-card p-4">
+          <div class="pro-chip">Jastip Bakpia</div>
+          <h4 class="fw-bold mb-2">Jasa Titip Bakpia Yogyakarta 🥮</h4>
+          <p class="mb-0 text-secondary">
+            Kami melayani titipan bakpia dari berbagai toko favorit di Yogyakarta.
+            Pesanan dibelikan sesuai request, dikemas aman, lalu dikirim menuju Cirebon
+            dan diteruskan ke alamat Anda.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="pro-card p-4">
+          <div class="pro-chip">Parcel</div>
+          <h4 class="fw-bold mb-2">Parcel Lebaran & Natal 🎁</h4>
+          <p class="mb-0 text-secondary">
+            Menyediakan berbagai jenis parcel premium yang bisa custom, rapi, dan cocok
+            untuk hadiah keluarga maupun relasi bisnis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KATALOG -->
+<section id="katalog" class="section">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-title">Akses Katalog</h2>
+      <p class="section-subtitle">Pilih produk, lalu chat untuk pemesanan dan konsultasi.</p>
+    </div>
+
+    <div class="row justify-content-center g-4">
+      <div class="col-md-5 col-lg-4">
+        <div class="pro-card">
+          <img src="https://serikatnews.com/wp-content/uploads/2022/12/bakpia.jpg" alt="Katalog Bakpia">
+          <div class="card-body">
+            <div class="pro-chip">Bakpia Jogja</div>
+            <h5 class="fw-bold">Katalog Bakpia</h5>
+            <p class="text-secondary mb-3">Klik untuk lihat daftar produk dan pilihan toko.</p>
+            <div class="d-grid">
+              <a class="btn btn-primary"
+                 href="https://drive.google.com/file/d/1S0wATgghe1tB5UwC-qXABhi6NmvFXzQW/view?usp=drive_link"
+                 target="_blank" rel="noopener">
+                Buka Katalog Bakpia
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-5 col-lg-4">
+        <div class="pro-card">
+          <img src="https://www.prestisa.com/wp-content/uploads/2016/06/7.950K.jpg" alt="Katalog Parcel">
+          <div class="card-body">
+            <div class="pro-chip">Parcel Premium</div>
+            <h5 class="fw-bold">Katalog Parcel</h5>
+            <p class="text-secondary mb-3">Klik untuk cek pilihan parcel & opsi custom.</p>
+            <div class="d-grid">
+              <a class="btn btn-primary"
+                 href="https://drive.google.com/file/d/12IV4Ax5q2zTRIaYiHIHV4tDFvz2iXdvk/view?usp=drive_link"
+                 target="_blank" rel="noopener">
+                Buka Katalog Parcel
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CARA ORDER -->
+<section id="caraorder" class="section bg-white">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-title">Cara Order</h2>
+      <p class="section-subtitle">Proses simpel, transparan, dan cepat.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="pro-card p-4">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="step-icon">1</div>
+            <div>
+              <div class="step-title">Pilih Produk</div>
+              <div class="text-secondary small">Buka katalog bakpia/parcel, tentukan pilihan & jumlah.</div>
+            </div>
+          </div>
+          <div class="text-secondary">
+            Untuk parcel bisa request tema, budget, kartu ucapan, dan alamat tujuan.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="pro-card p-4">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="step-icon">2</div>
+            <div>
+              <div class="step-title">Konfirmasi via WhatsApp</div>
+              <div class="text-secondary small">Kirim detail pesanan + alamat + jadwal kirim.</div>
+            </div>
+          </div>
+          <div class="text-secondary">
+            Kami cek stok/opsi terbaik, lalu kirim total & estimasi proses.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="pro-card p-4">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="step-icon">3</div>
+            <div>
+              <div class="step-title">Pembayaran & Pengiriman</div>
+              <div class="text-secondary small">Setelah menentukan pilihan pesanan lalu DP 50%, pesanan diproses & dikirim.</div>
+            </div>
+          </div>
+          <div class="text-secondary">
+            Pengemasan aman & rapi. Resi/informasi pengiriman kami update.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+<a class="btn btn-lg btn-order"
+         href="https://wa.me/6289516928617?text=Halo,%20saya%20mau%20order.%20Berikut%20detail%20pesanan%20saya:"
+target="_blank">
+        Order Sekarang via WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section id="testimoni" class="section">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-title">Testimoni Pelanggan</h2>
+      <p class="section-subtitle">Beberapa review dari pelanggan yang sudah order.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="pro-card p-4">
+          <div class="stars mb-2">★★★★★</div>
+          <div class="quote">
+            “Parcelnya rapi banget, kelihatan premium. Admin responsif dan bantu pilih sesuai budget. Recomended!”
+          </div>
+          <div class="mt-3 small text-secondary">
+            — Nia, Cirebon
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="pro-card p-4">
+          <div class="stars mb-2">★★★★☆</div>
+          <div class="quote">
+            “Jastip bakpia aman sampai tujuan, packingnya bagus. Enak juga bisa request toko favorit.”
+          </div>
+          <div class="mt-3 small text-secondary">
+            — Dimas, Cirebon
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="pro-card p-4">
+          <div class="stars mb-2">★★★★★</div>
+          <div class="quote">
+            “Proses cepat dan jelas. Parcel bisa custom kartu ucapan, cocok buat kirim ke relasi kantor.”
+          </div>
+          <div class="mt-3 small text-secondary">
+            — Rani, Yogyakarta
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <div class="small text-secondary">Mau ditambah testimoni asli? Tinggal kirim teksnya, aku rapihin formatnya biar makin trusted.</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERI -->
+<section id="galeri" class="section bg-white">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-title">Galeri Produk</h2>
+      <p class="section-subtitle">Beberapa contoh bakpia dan parcel yang pernah kami siapkan.</p>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-6 col-md-3">
+        <a href="https://serikatnews.com/wp-content/uploads/2022/12/bakpia.jpg" data-lightbox="gallery">
+          <img src="https://serikatnews.com/wp-content/uploads/2022/12/bakpia.jpg" class="gallery-square" alt="Galeri 1">
+        </a>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <a href="https://www.gotravelly.com/blog/wp-content/uploads/2020/10/bakpia.jpg" data-lightbox="gallery">
+          <img src="https://www.gotravelly.com/blog/wp-content/uploads/2020/10/bakpia.jpg" class="gallery-square" alt="Galeri 2">
+        </a>
+      </div>
+
+      <div class="col-6 col-md-3">
+    <a href="https://drive.google.com/uc?export=view&id=1kOZo9d97irddvSp1b933l8jwab4E04ZR"
+       data-lightbox="gallery-parcel">
+      <img
+  src="https://drive.google.com/thumbnail?id=1kOZo9d97irddvSp1b933l8jwab4E04ZR&sz=w800"
+  class="gallery-square"
+  alt="Parcel Lebaran Premium sentuhangift.id">
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="https://drive.google.com/uc?export=view&id=1KUiTN8xXGf3G-cRBOYEPslmF7NDFgOjg"
+       data-lightbox="gallery-parcel">
+      <img
+  src="https://drive.google.com/thumbnail?id=1KUiTN8xXGf3G-cRBOYEPslmF7NDFgOjg&sz=w800"
+  class="gallery-square"
+  alt="Parcel Custom Premium sentuhangift.id">
+    </a>
+  </div>
+
+</div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak" class="section">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-title">Kontak Kami</h2>
+      <p class="section-subtitle">Alamat & lokasi tetap</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="contact-box h-100">
+          <div class="fw-bold mb-3">Informasi Kontak</div>
+          <p class="mb-2"><span class="icon-dot"></span><strong>Alamat:</strong> Kasihan, Bantul, Yogyakarta & Pangurangan, Cirebon</p>
+          <p class="mb-3"><span class="icon-dot"></span><strong>Telepon:</strong> 0895-1692-8617</p>
+
+<a class="btn btn-lg btn-order"             href="https://wa.me/6289516928617?text=Halo,%20saya%20ingin%20order%20bakpia%20atau%20parcel."
+target="_blank">
+            Chat via WhatsApp
+          </a>
+
+          <div class="mt-3 small text-secondary">
+            Tips: tulis “bakpia/parcel + budget + kota tujuan”, biar kami cepat bantu rekomendasi.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="contact-box h-100">
+          <div class="fw-bold mb-3">Lokasi</div>
+          <div class="rounded-4 overflow-hidden border shadow-sm">
+            <iframe
+              src="https://www.google.com/maps?q=-6.629355,108.448269&z=15&output=embed"
+              width="100%" height="290" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container text-center">
+    <div class="fw-bold">sentuhangift.id</div>
+    <small>© 2025 Jastip & Parcel Terpercaya • All rights reserved</small>
+    <div class="mt-3">
+      <a class="btn btn-light"
+         href="https://instagram.com/sentuhangift.id"
+         target="_blank" rel="noopener">
+        Ikuti Kami di Instagram
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+<script>
+  // Slider stabil + klik next/prev tidak lompat
+  const slides = Array.from(document.querySelectorAll('.slider img'));
+  let current = 0;
+  let timer = null;
+
+  function renderSlide(index){
+    slides.forEach((img,i)=> img.classList.toggle('active', i === index));
+  }
+
+  function nextSlide(){
+    current = (current + 1) % slides.length;
+    renderSlide(current);
+  }
+
+  function changeSlide(direction){
+    current = (current + direction + slides.length) % slides.length;
+    renderSlide(current);
+    restartAuto();
+  }
+
+  function restartAuto(){
+    if(timer) clearInterval(timer);
+    timer = setInterval(nextSlide, 3500);
+  }
+
+  renderSlide(current);
+  restartAuto();
+</script>
+
+</body>
+</html>
